@@ -119,6 +119,9 @@ public class MarqueeView extends ViewFlipper {
 
     // 启动轮播
     public boolean start() {
+        if (isFlipping()) {
+			stopFlipping();
+		}
         if (notices == null || notices.size() == 0) return false;
         removeAllViews();
 
